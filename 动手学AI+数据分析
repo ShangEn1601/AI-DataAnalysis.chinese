@@ -2,3 +2,83 @@
   - 提示词 （ Prompt ): từ gợi ý? --> 给AI的“指令”或“问题”或“本文”，它会根据提示词去生成对应的输出。
   - 描述性统计：是用数字和图表说清数据的基础情况。（比如：平均值、最大值、分布图，只客观描述，不解释原因）。
   - 描述性分析：是在描述性统计（基础情况）的基础上，进一步观察数据的模式、趋势或分组差异，并尝试结合业务背景给出初步解释或假设。
+      +  描述性分析一般包括：
+          1. 集中趋势度量 -> （ 是描述数据集中在某个中心值附近的程度 -【 Chỉ số Đo lường xu hướng tập trung (các giá trị dữ liệu tập trung quanh trung tâm).】）
+              - 平均数（Mean）：所有数据值的总和除以数据的数量。
+              - 中位数（Median）：将数据从小到大排列后位于中间位置的值。
+              - 众数 /zhòng shù/ 【名词】 → mốt, giá trị xuất hiện nhiều nhất（Mode）：数据中出现次数最多的值。
+          2. 离散程度度量 -> （描述数据分布的分散或变化程度。-【 Chỉ số Đo lường mức độ phân tán dữ liệu -- Mô tả mức độ phân tán hoặc biến đổi của dữ liệu.】 ）
+              - 极差（Range）：数据中最大值和最小值的差。- 【Khoảng biến thiên (Range) là chênh lệch giữa giá trị lớn nhất và nhỏ nhất trong tập dữ liệu.】=> range=max-min
+                             + TÁC DỤNG: + Đo độ trải rộng thô của dữ liệu (nhanh, dễ tính).
+                                         + Dùng khi cần đánh giá nhanh sự biến động (ví dụ: nhiệt độ cao nhất/thấp nhất trong ngày).
+                             + VD:  Dãy số: 3, 5, 9, 12 → Range = 12 - 3 = 9 // Dãy số: 100, 100, 100 → Range = 0 (không biến động)
+                             + HẠN CHẾ:   Không quan tâm đến phân bố các giá trị ở giữa (chỉ dựa vào 2 điểm đầu/cuối). // Dễ bị ảnh hưởng bởi giá trị ngoại lai (outliers).
+              - 方差（Variance）：衡量数据值与平均数之间差异的平方的平均值。-> (数据值与平均数的差平方后取平均，就是方差。
+                                                                      -> 【trung bình của bình phương các khác biệt giữa giá trị dữ liệu và giá trị trung bình.】
+                             +  Phương sai (Variance) là một đại lượng thống kê đo lường mức độ phân tán của tập dữ liệu xung quanh giá trị trung bình.
+                             + SS Khoảng biến thiên (Range) &  Phương sai (Variance):  
+                                    . Range: Chỉ đo khoảng cách 2 điểm biên (bỏ qua thông tin trung gian) 
+                                    . Phương sai: Đo độ phân tán xung quanh giá trị trung bình (dùng tất cả dữ liệu).
+                                     → Range như đo chiều dài sợi dây, còn phương sai như đo độ rung lắc của sợi dây!
+                             + VD: Tập dữ liệu: [2, 4, 6]
+                                              . Trung bình (μ) = (2+4+6)/3=4
+                                              . Độ lệch bình phương: (2-4) ^2=4, (4-4)^2=0, (6-4)^2=4
+                                              .  Phương sai (σ^2) = (4+0+4)/3=8/3 ≈ 2.67
+                             + Phương sai ≈ 0 → Dữ liệu tập trung gần trung bình.
+                             + Phương sai càng lớn → Độ biến động cao -> Dữ liệu càng không ổn định, phân tán xa trung bình. ⇒ Khó dự đoán xu hướng. // Rủi ro/không ổn định
+                                                   →  Dữ liệu phân tán mạnh có thể làm giảm độ tin cậy của giá trị trung bình.
+                                                  . VD: Trong tài chính: Giá cổ phiếu biến động mạnh → Rủi ro cao.
+                                                  . VD: Trong sản xuất: Sản phẩm có kích thước chênh lệch nhiều → Chất lượng không đồng đều
+                             + Cần làm gì? 
+                                          . Nếu muốn giảm độ phân tán: Kiểm tra ngoại lệ (outliers) hoặc cải thiện quy trình thu thập dữ liệu.
+                                          . Sử dụng thêm độ lệch chuẩn (Standard Deviation) để hiểu mức độ phân tán theo đơn vị gốc.
+                             + ỨNG DỤNG: -> Đánh giá rủi ro trong tài chính(biến động giá),AI// Kiểm tra độ ổn định trong sản xuất (sai số sản phẩm). // Tối ưu hóa mô hình trong học máy.
+              - 标准差（Standard Deviation）：方差的平方根，也是衡量数据分散程度的指标。-> ( 用来表示数据分散程度。) 
+                                            -> 【 Độ lệch chuẩn (Standard Deviation): căn bậc hai của phương sai, cũng là chỉ số đo mức độ phân tán dữ liệu.】
+                             + Đơn vị: Cùng đơn vị với dữ liệu gốc (ví dụ: mét, giây, điểm số...).
+                             + Tại sao cần độ lệch chuẩn?
+                                     . Phương sai có đơn vị bình phương (ví dụ: mét²), khó diễn giải → Độ lệch chuẩn khắc phục điều này bằng cách lấy căn bậc hai.
+                                     . Giúp đánh giá độ biến động một cách trực quan hơn.
+                             + VD: Tập dữ liệu A: [2, 4, 6]
+                                   . Phương sai = 2.67 → Độ lệch chuẩn = CB2 của 2.67 ≈ 1.63
+                             + ỨNG DỤNG: 
+                                   . Tài chính: Đo rủi ro biến động giá cổ phiếu.
+                                   . Y tế: Đánh giá độ ổn định của chỉ số sức khỏe.
+                                   . Giáo dục: So sánh độ đồng đều điểm thi giữa các lớp.
+          3. 分布形状 ：
+              - 偏度（Skewness）：衡量数据分布的不对称性，正偏度表示数据右尾长，负偏度表示数据左尾长。-> 偏度表示数据分布是否对称，正偏度右边长，负偏度左边长。
+                              -> 【 Độ lệch  (Skewness) đo mức độ bất đối xứng của phân phối dữ liệu.】                  
+                    + CT: Skewness ≈ 3 ( Mean - Median ) / standard deviation
+                          . Mean = Giá trị trung bình 
+                          . Median = Giá trị trung vị
+                          . Standard Deviation = Độ lệch chuẩn 
+                    +  Tại sao Độ lệch  (Skewness) quan trọng?
+                          . Ảnh hưởng đến phân tích thống kê: Nhiều mô hình (như hồi quy) giả định dữ liệu đối xứng.
+                          . Phát hiện bất thường: Độ lệch lớn → Có thể tồn tại ngoại lệ (outliers) hoặc sai lệch trong thu thập dữ liệu.
+                    + VD: Điểm thi:Hầu hết học sinh đạt 8-10 điểm, chỉ vài em 0-2 điểm → Độ lệch âm (đuôi trái dài).
+                    + Cách xử lý khi dữ liệu lệch:
+                          . Chuẩn hóa dữ liệu: Dùng log transformation (ví dụ: log(lương)).
+                          . Dùng trung vị thay trung bình để mô tả xu hướng trung tâm.
+                    ⇒ Tóm lại: Độ lệch giống như "kiểm tra cân bằng" của dữ liệu — giúp bạn biết liệu phân phối có "nghiêng" về một phía hay không! 
+              - 峰度（Kurtosis）：衡量数据分布的尖峭程度，高峰度表示数据分布比正态分布更尖锐。
+                / fēng dù (Kurtosis): héng liáng shù jù fēn bù de jiān qiào chéng dù, gāo fēng dù biǎo shì shù jù fēn bù bǐ zhèng tài fēn bù gèng jiān ruì./
+                ==> Độ nhọn đỉnh (Kurtosis): đo lường mức độ nhọn của phân bố dữ liệu; độ nhọn cao cho thấy dữ liệu nhọn hơn phân bố chuẩn.
+                    + GIẢI THÍCH: . Độ nhọn (Kurtosis) đo mức độ tập trung dữ liệu ở đuôi (tail) và đỉnh (peak) so với phân phối chuẩn (Normal Distribution).
+                                  . Cho biết dữ liệu có đuôi "dày" hay đỉnh "nhọn" hơn bình thường.
+                    + Tại sao Độ nhọn (Kurtosis) quan trọng?
+                            . Đánh giá rủi ro: Đuôi dày (Kurtosis cao) → Xác suất xuất hiện giá trị cực đại cao (ví dụ: khủng hoảng tài chính).
+                            . Kiểm tra giả định: Nhiều mô hình thống kê (như ANOVA) giả định dữ liệu có độ nhọn gần phân phối chuẩn.
+                    + Ví dụ thực tế: ( DO DEEPSEEK đưa ra )
+                            . Kurtosis cao (>3): 
+                                  -> Lợi nhuận chứng khoán: Đa số ngày biến động nhỏ, nhưng thi thoảng "bùng nổ" hoặc "sụp đổ" mạnh.
+                                  -> Điểm thi đại học: Nhiều thí sinh đạt điểm trung bình, rất ít điểm cực cao/cực thấp.
+                    ⇒  Tóm lại: Độ nhọn giống như "kiểm tra xem dữ liệu có nhiều bất ngờ cực đại không" — giúp bạn chuẩn bị cho các kịch bản hiếm nhưng khốc liệt! 
+          4. 频率分布 / pín lǜ fēn bù / : Phân bố tần suất (Frequency Distribution): 
+                - 统计数据中各个不同值出现的次数或频率。
+                ⇒ Tóm lại: Tần suất giúp bạn trả lời câu hỏi: "Giá trị này xuất hiện bao nhiêu lần?" — từ đó thấy được mẫu hình hoặc bất thường trong dữ liệu! 📊
+# （进阶）：探索更多有意思的数据集！
+
+
+                          
+
+
