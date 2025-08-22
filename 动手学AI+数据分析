@@ -76,7 +76,25 @@
           4. 频率分布 / pín lǜ fēn bù / : Phân bố tần suất (Frequency Distribution): 
                 - 统计数据中各个不同值出现的次数或频率。
                 ⇒ Tóm lại: Tần suất giúp bạn trả lời câu hỏi: "Giá trị này xuất hiện bao nhiêu lần?" — từ đó thấy được mẫu hình hoặc bất thường trong dữ liệu! 📊
-# （进阶）：探索更多有意思的数据集！
+# AI + 数据分析通知入门
+    1. 是什么？
+        - AI: là làm cho máy tính biết " học " và biết " suy nghĩ " giống con người.
+        - 数据分析：là 1 công việc dọn dẹp và khám phá 1 đống thông tin hỗn độn, phức tạp để tìm ra câu trả lời.
+            + thu thập và dọn dẹp: ( nghiên cứu và làm sạch) -> có nghĩa là: tôi có 1 đống dữ liệu thô lộn xộn ( như : dữ liệu từ nhiều nguồn, bị trùng lặp, sai chính tả,...) -> đưa cho AI -> AI sẽ sắp xếp lại dữ liệu -> loại bỏ những thứ không cần thiết và sửa các lỗi dữ liệu -> để có 1 bộ dữ liệu " sạch sẽ".
+            + khám phá và tìm manh mối: tôi sẽ thông qua dữ liệu đã được làm sạch bởi AI -> tiến hành xem xét để hiểu sơ bộ dữ liệu thông qua biểu đồ hay các phương pháp thống kê khác nhau.
+            + mô hình hóa dữ liệu: sử dụng mô hình thống kê hoặc thuật toán máy học để tìm các mẫu hình, xu hướng, hoặc mối liên hệ thú vị giữa chúng. ( ví dụ: mỗi khi trời mưa thì tiệm chúng ta bán kem ít hơn.)
+                  . các công cụ phổ biến như: Power BI, Excel, SOL, Python/R,...
+            + rút ra kế luận ( giải thích kết quả ):từ những manh mối tìm được, đưa ra kết luận và quyết định. ( ví dụ: vậy những ngày trời mưa, mình nên làm ít kem lại và tập trung vào bán coffee nóng .)
+--> tóm lại, phân tích dữ liệu là 1 quá trình biến 1 đống số liệu thô hỗn độn -> thành những thông tin có ý nghĩa -> giúp chúng ta có thể đưa ra quyết định thông minh hơn.
+    ## AI ( RACCOON) 的角色和功能定位:
+        - 是一个基于人工智能的助手，设计用来提供信息、解答问题、进行数据分析和生成报告。我的主要功能是帮助用户处理特定任务，比如数据分析、自然语言处理、生成文本等。
+    ## AI trong phân tích dữ liệu:
+        - Tự động hóa các tác vụ như dọn dẹp và phân loại dữ liệu, để con người tập trung vào quyết định phức tạp.
+        - Dự đoán xu hướng và phát hiện mối liên hệ tinh vi, giúp ra quyết định tốt hơn.
+        - Hỗ trợ ra quyết định thông minh, ví dụ cá nhân hóa điều trị trong y tế.
+        - Phân tích thời gian thực, phản hồi nhanh với thay đổi thị trường hoặc hành vi khách hàng.
+        - Đơn giản hóa dữ liệu phức tạp, giúp người không chuyên cũng hiểu và sử dụng được.
+--> Tóm lại, AI+ phân tích dữ liệu giống như một bộ não thông minh, xử lý thông tin nhanh, chính xác và hiệu quả, giúp chúng ta hiểu rõ hơn về thế giới.
 
 
                           
